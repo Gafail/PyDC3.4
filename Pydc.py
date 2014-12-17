@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: cp1251 -*-
  
 # A python port of nmdc
 # Also used documentation from http://wiki.gusari.org/index.php?title=Client-to-Hub_handshake
@@ -62,10 +61,7 @@ class PyDC:
             ###Very temporary Fix ###
             t = self.sock.recv(1)
             
-            if t == b'\x92':
-                t = "'"
-            else:
-                t = t.decode('utf-8')
+            t = t.decode('utf-8','replace')
             
             ###Very temporary Fix ###
             #######################################################
